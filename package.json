@@ -8,7 +8,7 @@
     "start": "electron .",
     "test": "mocha",
     "build:win32-x64": "npx electron-packager . --platform=win32 --arch=x64 --ignore=\".git(ignore)\" --overwrite --icon=icon.icns",
-    "build:linux-x64": "npx electron-packager ./src --platform=linux --arch=x64 --ignore='.git(ignore|modules)' --overwrite"
+    "build:linux-x64": "npx electron-packager . --platform=linux --arch=x64 --ignore=\".git(ignore|modules)\" --overwrite --icon=icon.icns"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
