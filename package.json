@@ -7,6 +7,7 @@
   "scripts": {
     "start": "electron .",
     "test": "mocha",
+    "build": "npx electron-packager . --ignore=\".git(ignore|modules)\" --overwrite --icon=icon.icns",
     "build:win32-x64": "npx electron-packager . --platform=win32 --arch=x64 --ignore=\".git(ignore)\" --overwrite --icon=icon.icns",
     "build:linux-x64": "npx electron-packager . --platform=linux --arch=x64 --ignore=\".git(ignore|modules)\" --overwrite --icon=icon.icns"
   },
