@@ -3,13 +3,11 @@
   "productName": "electron-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "mocha",
-    "build": "npx electron-packager . --ignore=\".git(ignore|modules)\" --overwrite --icon=icon.icns",
-    "build:win32-x64": "npx electron-packager . --platform=win32 --arch=x64 --ignore=\".git(ignore)\" --overwrite --icon=icon.icns",
-    "build:linux-x64": "npx electron-packager . --platform=linux --arch=x64 --ignore=\".git(ignore|modules)\" --overwrite --icon=icon.icns"
+    "start": "npx electron-webpack dev",
+    "compile": "npx electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -25,8 +23,11 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "electron": "^4.0.7",
+    "electron-builder": "^20.39.0",
     "electron-packager": "^13.1.1",
+    "electron-webpack": "^2.6.2",
     "mocha": "^6.0.2",
-    "spectron": "^5.0.0"
+    "spectron": "^5.0.0",
+    "webpack": "^4.29.6"
   }
 }
